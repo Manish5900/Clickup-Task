@@ -5,37 +5,140 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration form</title>
-    <link rel="stylesheet" href="/style1.css">
+    <title> HTML Table </title>
+    <script src="https://kit.fontawesome.com/4c8eb7bc61.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style2.css">
 </head>
 
 <body>
     <div class="main">
-        <form>
-            <div id="heading">
-                <h1> Add Record </h1>
-            </div>
-            <div id="closeIcon"><a href="#">&times;</a></div>
+        <div id="header">
             <div>
-                <label for="location"><strong>Location Name </strong> </label><br><br>
-                <textarea id="location" name="location" rows="3" cols="40"></textarea><br>
+                <input type="button" id="addbtn" name="Add" value="+  Add ">
             </div>
-            <br>
             <div>
-                <label for="description"><strong>Location Description </strong> </label><br><br>
-                <textarea id="description" name="description" rows="9" cols="40"></textarea><br>
+                <input type="radio" name="status" id="showInactive" value="showInactive">
+                <label for="showInactive">Show Inactive</label>
             </div>
-            <br>
-            <div>
-                <label for="status"><strong>Status:</strong></label><br><br>
-                <input type="radio" id="Active" name="status" value="Active">
-                <label for="Active">Active</label>
-                <input type="radio" id="Inactive" name="status" value="Inactive">
-                <label for="Inactive">Inactive</label>
-            </div>
-            <br>
-            <input type="button" name="Add" id="Add" value=" Add ">
-        </form>
+        </div>
+        <hr />
+
+        <!-- table start  -->
+        <div>
+            <table>
+                <tr class="headrow">
+                    <th>Sr. No.</th>
+                    <th>ID</th>
+                    <th>Location Name</th>
+                    <th>Location Description</th>
+                    <th>Action</th>
+                </tr>
+                <tr class="rows">
+                    <td> 1 </td>
+                    <td> 2 </td>
+                    <td> Neighbouring Health</td>
+                    <td>Lorem Ipsum</td>
+                    <td>
+                        <div class="action">
+                            <a id="view" href=""><i class="fa-sharp fa-solid fa-eye"></i>View</a>
+                            <a id="edit" href=""><i class="fa-regular fa-pen-to-square"></i>Edit</a>
+                            <a id="delete" href=""><i class="fa-sharp fa-solid fa-trash"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="rows">
+                    <td> 1 </td>
+                    <td> 2 </td>
+                    <td> Neighbouring Health</td>
+                    <td> Lorem Ipsum</td>
+                    <td>
+                        <div class="action">
+                            <a id="view" href=""><i class="fa-sharp fa-solid fa-eye"></i>View</a>
+                            <a id="edit" href=""><i class="fa-regular fa-pen-to-square"></i>Edit</a>
+                            <a id="delete" href=""><i class="fa-sharp fa-solid fa-trash"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="rows">
+                    <td> 1 </td>
+                    <td> 2 </td>
+                    <td> Neighbouring Health</td>
+                    <td> Lorem Ipsum</td>
+                    <td>
+                        <div class="action">
+                            <a id="view" href=""><i class="fa-sharp fa-solid fa-eye"></i>View</a>
+                            <a id="edit" href=""><i class="fa-regular fa-pen-to-square"></i>Edit</a>
+                            <a id="delete" href=""><i class="fa-sharp fa-solid fa-trash"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="rows">
+                    <td> 1 </td>
+                    <td> 2 </td>
+                    <td> Neighbouring Health</td>
+                    <td> Lorem Ipsum</td>
+                    <td>
+                        <div class="action">
+                            <a id="view" href=""><i class="fa-sharp fa-solid fa-eye"></i>View</a>
+                            <a id="edit" href=""><i class="fa-regular fa-pen-to-square"></i>Edit</a>
+                            <a id="delete" href=""><i class="fa-sharp fa-solid fa-trash"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="rows">
+                    <td> 1 </td>
+                    <td> 2 </td>
+                    <td> Neighbouring Health</td>
+                    <td> Lorem Ipsum</td>
+                    <td>
+                        <div class="action">
+                            <a id="view" href=""><i class="fa-sharp fa-solid fa-eye"></i>View</a>
+                            <a id="edit" href=""><i class="fa-regular fa-pen-to-square"></i>Edit</a>
+                            <a id="delete" href=""><i class="fa-sharp fa-solid fa-trash"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="rows">
+                    <td> 1 </td>
+                    <td> 2 </td>
+                    <td> Neighbouring Health</td>
+                    <td> Lorem Ipsum</td>
+                    <td>
+                        <div class="action">
+                            <a id="view" href=""><i class="fa-sharp fa-solid fa-eye"></i>View</a>
+                            <a id="edit" href=""><i class="fa-regular fa-pen-to-square"></i>Edit</a>
+                            <a id="delete" href=""><i class="fa-sharp fa-solid fa-trash"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="rows">
+                    <td> 1 </td>
+                    <td> 2 </td>
+                    <td> Neighbouring Health</td>
+                    <td> Lorem Ipsum</td>
+                    <td>
+                        <div class="action">
+                            <a id="view" href=""><i class="fa-sharp fa-solid fa-eye"></i>View</a>
+                            <a id="edit" href=""><i class="fa-regular fa-pen-to-square"></i>Edit</a>
+                            <a id="delete" href=""><i class="fa-sharp fa-solid fa-trash"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="rows">
+                    <td> 1 </td>
+                    <td> 2 </td>
+                    <td> Neighbouring Health</td>
+                    <td> Lorem Ipsum</td>
+                    <td>
+                        <div class="action">
+                            <a id="view" href=""><i class="fa-sharp fa-solid fa-eye"></i>View</a>
+                            <a id="edit" href=""><i class="fa-regular fa-pen-to-square"></i>Edit</a>
+                            <a id="delete" href=""><i class="fa-sharp fa-solid fa-trash"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 
