@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/193f2a0b5b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="body">
+    <!-- this main form-->
+    <div class="main-back disblank" id="popup">
+      <main class="main">
+        <form action="#">
+          <span id="total-error"></span>
+          <div class="cut-button" onclick="addRecordPop()">&times;</div>
+          <div class="form-heading">
+            <h1>Add Record</h1>
+          </div>
+
+          <!-- For ID -->
+          <label for="Location-name">ID</label>
+          <input type="number" name="Location-name" placeholder="Enter your ID (Only numbers)" id="ID" />
+
+          <!-- Location name -->
+          <label for="Location-name">Location Name </label>
+          <input type="text" name="Location-name" placeholder="Location City" id="Location_name" />
+
+          <!-- Location-Discription -->
+          <label for="Location-Discription">Location Discription</label>
+          <textarea class="address" name="location-Discription" cols="30" rows="10" id="textbox"
+            placeholder="Write about the city"></textarea>
+
+          <div class="radio">
+            <input type="radio" id="Active" name="Status" />
+            <label for="Active"> Inactive </label>
+            <input type="radio" id="Inactive" name="Status" />
+            <label for="Inactive"> Active </label>
+          </div>
+          <button class="button-Add-record" type="button" onclick="addData()"> Add </button>
+        </form>
+      </main>
+    </div>
+    <!-- the main form end-->
+
+    <!-- this is for table -->
+    <div class="content">
+      <div class="button-div">
+        <button class="button-add" onclick="addRecordPop()">+&nbsp;Add</button>
+
+        <div class="showInactive">
+          <input type="radio" id="show-inactive" />
+          <label for="show-inactive" style="font-size: 15px">Show Inactive</label>
+        </div>
+      </div>
+      <div class="table">
+        <table>
+          <tbody>
+            <tr class="fir">
+              <td><b>Sr. No.</b></td>
+              <td><b>ID</b></td>
+              <td><b>Location Name</b></td>
+              <td><b>Location Description</b></td>
+              <td><b>Action</b></td>
+            </tr>
+          </tbody>
+          <tbody id="insert_data">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- to view data-->
+    <div class="main-back disblank" id="view_data">
+      <form class="main text">
+        <div class="cut-button" onclick="close_box()">&times;</div>
+        <label for="ID">ID</label>
+        <input type="number" class="text" id="ID_veiw_data" value="" disabled />
+
+        <label for="name">Location Name</label>
+        <input type="text" class="text" id="name_veiw_data" value="" disabled />
+
+        <label for="location_drcr">Location Description</label>
+        <textarea type="text" class="address text" id="location_drcr_veiw_data" value="" disabled></textarea>
+      </form>
+    </div>
+
+
+    <!-- to delete data -->
+    <div class="main-back disblank" id="Delete_view">
+      <form class="main text">
+        <div class="cut-button" onclick="close_box_del()">&times;</div>
+        <h1 style="color: red">Alert !!</h1>
+        <p>Are you sure you want to delete the Record ?</p>
+        <p>1. Press <b>YES</b> to confirm and proceed</p>
+        <p>2. Press <b>NO</b> to go back</p>
+        <div class="button-popup" id="button-popup">
+        </div>
+      </form>
+    </div>
+
+
+    <!-- to edit data -->
+    <div class="main-back disblank" id="edit_data_popup">
+      <main class="main">
+        <form action="#">
+          <span id="total-error"></span>
+          <div class="cut-button" onclick="close_box_edit()">&times;</div>
+          <div class="from-heading">
+            <h1>Edit Record</h1>
+          </div>
+
+          <!-- Location name -->
+          <label for="Location-name">Location name </label>
+          <input type="text" name="Location-name" placeholder="Location City" id="E_Location_name" />
+
+          <!-- Location-Discription -->
+          <label for="Location-Discription">Location Discription</label>
+          <textarea class="address" name="location-Discription" cols="30" rows="10" id="E_textbox"
+            placeholder="Write about the city"></textarea>
+
+          <div class=" radio">
+            <input type="radio" id="edit-Active" name="Status" />
+            <label for="edit-Active">Inactive</label>
+            <input type="radio" id="edit-Inactive" name="Status" />
+            <label for="edit-Inactive"> Active </label>
+          </div>
+          <div class="button-popup" id="Ebutton-popup">
+
+          </div>
+        </form>
+      </main>
+    </div>
+    <!-- script  to perform action start hear -->
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
