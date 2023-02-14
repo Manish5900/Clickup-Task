@@ -9,8 +9,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-/* form /////////////////////////////////  */
+/* form  */
 .text {
   text-align: center;
   display: flex;
@@ -19,32 +18,9 @@ body {
   padding: 10px;
   margin: 5px;
 }
-.main-back {
-  background-color: rgba(0, 0, 0, 0.6);
-  transition: all 0.4s ease-in-out;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 400;
-}
 
 .disblank {
   display: none;
-}
-
-.main {
-  width: 40vw;
-  margin: auto;
-
-  transition: all 0.4s ease-in-out;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  z-index: 999;
 }
 
 form {
@@ -57,7 +33,7 @@ form {
   background-color: aliceblue;
   color: black;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 25px;
 }
 
 form > input {
@@ -114,14 +90,14 @@ form > label {
   background-color: blue;
   width: 140px;
 }
+
 .button-Add-record:hover {
   background-color: brown;
   color: white;
 }
 
 .form-heading {
-  font-size: medium;
-  color: #3965dd;
+  color: Blue;
 }
 
 .cut-button {
@@ -134,6 +110,70 @@ form > label {
 
 .cut-button:hover {
   transform: scale(1.2);
+}
+
+/* Search functionality */
+
+.search {
+  display: flex;
+  margin: auto;
+}
+
+.search > input {
+  height: 25px;
+  border: none;
+  background-color: rgb(229, 172, 102);
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.search > button {
+  height: auto;
+  border: none;
+  background-color: blue;
+  color: white;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.search > button:hover {
+  background-color: brown;
+  color: white;
+}
+/* Pagination design */
+
+.page-box {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.list {
+  display: flex;
+  align-self: center;
+}
+.insert-page {
+  flex: 3;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 15px;
+}
+.insert-page li {
+  padding: 5px;
+}
+.selected {
+  border-radius: 50%;
+  background-color: black;
+}
+.selected a {
+  color: #f1f4ff;
+}
+a {
+  text-decoration: none;
 }
 
 /* //table */
@@ -185,8 +225,8 @@ form > label {
 .showInactive {
   color: black;
   position: absolute;
-  right: 15px;
-  margin: 0;
+  right: 50px;
+  margin: 10px;
   display: flex;
   justify-content: center;
 }
@@ -209,7 +249,7 @@ table {
   border-bottom-right-radius: 30px;
 }
 
-.fir td:nth-child(1) {
+.first td:nth-child(1) {
   font-size: 20px;
   padding: 8px;
   text-align: center;
@@ -219,7 +259,7 @@ table {
   border-bottom-left-radius: 35px;
 }
 
-.fir td {
+.first td {
   font-size: 20px;
   padding: 8px;
   text-align: center;
@@ -227,7 +267,7 @@ table {
   background-color: white;
 }
 
-.fir td:last-child {
+.first td:last-child {
   font-size: 20px;
   padding: 8px;
   text-align: center;
@@ -284,7 +324,7 @@ td > div > button:nth-child(3) {
   color: blue;
 }
 
-/* table    ////////////////////////////////////////// */
+/* table */
 table {
   border: none;
 }
@@ -340,7 +380,6 @@ table {
   background-color: green;
   width: auto;
 }
-
 .no:hover {
   background-color: darkgreen;
 }

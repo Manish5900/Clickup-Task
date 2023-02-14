@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>JavaScript functionality</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/193f2a0b5b.js" crossorigin="anonymous"></script>
 </head>
@@ -13,19 +13,55 @@
 <body>
 
   <div class="body">
-    <!-- this main form-->
+    <!-- This is for table -->
+    <div class="content">
+      <div class="button-div">
+        <button class="button-add" onclick="addRecordPop()">&nbsp; Add</button>
+        <div class="search">
+          <input class="search-input" id="inputsearch" type="text"><button class="search-button"
+            onclick="search_data()">search</button>
+        </div>
+        <div class="showInactive">
+
+          <input type="radio" id="show-inactive" onclick="sortActiveUser()" name="Show Active" />
+          <label for="show-inactive" style="font-size: 18px">Active</label>
+          <input type="radio" id="show-active" onclick="sortInactiveUser()" name="Show Active" />
+          <label for="show-active" style="font-size: 18px">Inactive</label>
+        </div>
+
+      </div>
+      <div class="table">
+        <table>
+          <tbody>
+            <tr class="first">
+              <td><b>Sr. No.</b></td>
+              <td><b>ID</b></td>
+              <td><b>Location Name</b></td>
+              <td><b>Location Description</b></td>
+              <td><b>Status</b></td>
+              <td><b>Action</b></td>
+            </tr>
+          </tbody>
+          <tbody id="insert_data">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- For Add data in form-->
     <div class="main-back disblank" id="popup">
       <main class="main">
         <form action="#">
           <span id="total-error"></span>
-          <div class="cut-button" onclick="addRecordPop()">&times;</div>
+          <div class="cut-button" id="close-btn" onclick="addRecordPop()"> &times; </div>
           <div class="form-heading">
             <h1>Add Record</h1>
           </div>
 
           <!-- For ID -->
           <label for="Location-name">ID</label>
-          <input type="number" name="Location-name" placeholder="Enter your ID (Only numbers)" id="ID" />
+          <input type="number" name="ID" placeholder="Enter your ID (Only numbers)" id="ID" />
 
           <!-- Location name -->
           <label for="Location-name">Location Name </label>
@@ -33,10 +69,12 @@
 
           <!-- Location-Discription -->
           <label for="Location-Discription">Location Discription</label>
-          <textarea class="address" name="location-Discription" cols="30" rows="10" id="textbox"
+          <textarea class="address" name="location-Discription" cols="20" rows="8" id="textbox"
             placeholder="Write about the city"></textarea>
 
-          <div class="radio">
+          <div class="radio" id="Status">
+            <span><b>Status: </b></span><br>
+            <br>
             <input type="radio" id="Active" name="Status" />
             <label for="Active"> Inactive </label>
             <input type="radio" id="Inactive" name="Status" />
@@ -48,38 +86,27 @@
     </div>
     <!-- the main form end-->
 
-    <!-- this is for table -->
-    <div class="content">
-      <div class="button-div">
-        <button class="button-add" onclick="addRecordPop()">+&nbsp;Add</button>
-
-        <div class="showInactive">
-          <input type="radio" id="show-inactive" />
-          <label for="show-inactive" style="font-size: 15px">Show Inactive</label>
+    <!-- pagination -->
+    <div class="pagination">
+      <div class="page-box">
+        <div class="prev">
+          <a href="">&larr; </a>
         </div>
-      </div>
-      <div class="table">
-        <table>
-          <tbody>
-            <tr class="fir">
-              <td><b>Sr. No.</b></td>
-              <td><b>ID</b></td>
-              <td><b>Location Name</b></td>
-              <td><b>Location Description</b></td>
-              <td><b>Action</b></td>
-            </tr>
-          </tbody>
-          <tbody id="insert_data">
-
-          </tbody>
-        </table>
+        <div class="list">
+          <ul class="insert-page" id="insert-page">
+            <!-- list injection -->
+          </ul>
+        </div>
+        <div class="next">
+          <a href=""> &rarr; </a>
+        </div>
       </div>
     </div>
 
-    <!-- to view data-->
+    <!-- To view data-->
     <div class="main-back disblank" id="view_data">
       <form class="main text">
-        <div class="cut-button" onclick="close_box()">&times;</div>
+        <div class="cut-button" onclick="close_box_view()">&times;</div>
         <label for="ID">ID</label>
         <input type="number" class="text" id="ID_veiw_data" value="" disabled />
 
@@ -87,12 +114,12 @@
         <input type="text" class="text" id="name_veiw_data" value="" disabled />
 
         <label for="location_drcr">Location Description</label>
-        <textarea type="text" class="address text" id="location_drcr_veiw_data" value="" disabled></textarea>
+        <textarea type="text" class="address text" id="location_desc_veiw_data" value="" disabled></textarea>
       </form>
     </div>
 
 
-    <!-- to delete data -->
+    <!-- To Delete data -->
     <div class="main-back disblank" id="Delete_view">
       <form class="main text">
         <div class="cut-button" onclick="close_box_del()">&times;</div>
@@ -106,13 +133,13 @@
     </div>
 
 
-    <!-- to edit data -->
+    <!-- To Edit data -->
     <div class="main-back disblank" id="edit_data_popup">
       <main class="main">
         <form action="#">
           <span id="total-error"></span>
           <div class="cut-button" onclick="close_box_edit()">&times;</div>
-          <div class="from-heading">
+          <div class="form-heading">
             <h1>Edit Record</h1>
           </div>
 
@@ -120,19 +147,20 @@
           <label for="Location-name">Location name </label>
           <input type="text" name="Location-name" placeholder="Location City" id="E_Location_name" />
 
-          <!-- Location-Discription -->
-          <label for="Location-Discription">Location Discription</label>
-          <textarea class="address" name="location-Discription" cols="30" rows="10" id="E_textbox"
+          <!-- Location Description -->
+          <label for="Location-Discription">Location Description</label>
+          <textarea class="address" name="location-Discription" cols="20" rows="8" id="E_textbox"
             placeholder="Write about the city"></textarea>
 
           <div class=" radio">
+            <span><b>Status: </b></span><br>
+            <br>
             <input type="radio" id="edit-Active" name="Status" />
             <label for="edit-Active">Inactive</label>
             <input type="radio" id="edit-Inactive" name="Status" />
             <label for="edit-Inactive"> Active </label>
           </div>
           <div class="button-popup" id="Ebutton-popup">
-
           </div>
         </form>
       </main>
