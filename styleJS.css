@@ -10,7 +10,7 @@ body {
   align-items: center;
 }
 
-/* form /////////////////////////////////  */
+/* form   */
 .text {
   text-align: center;
   display: flex;
@@ -136,7 +136,7 @@ form > label {
   transform: scale(1.2);
 }
 
-/* //table */
+/* table */
 .content {
   max-width: 70%;
   display: flex;
@@ -284,7 +284,7 @@ td > div > button:nth-child(3) {
   color: blue;
 }
 
-/* table    ////////////////////////////////////////// */
+/* table   */
 table {
   border: none;
 }
@@ -304,6 +304,52 @@ table {
 #total-error {
   text-align: center;
   color: red !important;
+}
+/*  Pagination Design */
+
+.page-box {
+  background-color: #f1f4ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+  border-radius: 20px;
+  padding: 10px;
+}
+.prev {
+  flex: 1;
+  text-decoration: none;
+}
+.list {
+  display: flex;
+  align-self: center;
+}
+.insert-page {
+  flex: 3;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 10px;
+}
+.insert-page li {
+  padding: 5px;
+}
+.selected {
+  border-radius: 50%;
+  background-color: #4369f3;
+}
+.selected a {
+  color: #f1f4ff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.next {
+  flex: 1;
+  text-decoration: none;
 }
 
 /* delet popup button */
